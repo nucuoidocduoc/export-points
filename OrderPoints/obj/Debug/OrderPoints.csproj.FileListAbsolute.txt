@@ -1,0 +1,11 @@
+D:\OrderPoints\OrderPoints\bin\Debug\OrderPoints.dll
+D:\OrderPoints\OrderPoints\bin\Debug\OrderPoints.pdb
+D:\OrderPoints\OrderPoints\bin\Debug\accoremgd.dll
+D:\OrderPoints\OrderPoints\bin\Debug\acdbmgd.dll
+D:\OrderPoints\OrderPoints\bin\Debug\acmgd.dll
+D:\OrderPoints\OrderPoints\bin\Debug\AcMPolygonMGD.dll
+D:\OrderPoints\OrderPoints\obj\Debug\OrderPoints.csproj.AssemblyReference.cache
+D:\OrderPoints\OrderPoints\obj\Debug\OrderPoints.csproj.CoreCompileInputs.cache
+D:\OrderPoints\OrderPoints\obj\Debug\OrderPoints.csproj.CopyComplete
+D:\OrderPoints\OrderPoints\obj\Debug\OrderPoints.dll
+D:\OrderPoints\OrderPoints\obj\Debug\OrderPoints.pdb
