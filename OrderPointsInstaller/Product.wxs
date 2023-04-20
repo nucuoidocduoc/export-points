@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="OrderPointsInstaller" Language="1033" Version="1.0.0.0" Manufacturer="avc" UpgradeCode="127bebd4-8350-4f82-992c-f20241263366">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate EmbedCab="yes" />
+
+		<Feature Id="ProductFeature" Title="OrderPointsInstaller" Level="1">
+			<!--reference cac component duoc them vao tinh nang nay-->
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+	<!--khai bao skeleton directory-->
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFiles64Folder">
+				<Directory Id="INSTALLFOLDER" Name="OrderPointACADPluginSoftware" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<!--khai bao component-->
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<Component Id="CMP_OrderPointsDll" Guid="{759CE9A8-F4DF-4DE7-B995-E5F0D926BE43}">
+				<File Source="..\OrderPoints\bin\Release\OrderPoints.dll"></File>
+			</Component>
+
+			<Component Id="CMP_WriteToRegistry" Guid="{759CE9A8-F4DF-4DE7-B995-E5F0D926BE45}">
+				<RegistryKey Id="orderRegKey" Action="create" Root="HKCU" Key="SOFTWARE\Autodesk\AutoCAD\R24.2\ACAD-6101:409\Applications\OrderPointACADPlugin">
+					<RegistryValue Name="DESCRIPTIONDESCRIPTION" Action="write" Value="OrderPointACADPlugin" Type="string" />
+					<RegistryValue Name="LOADCTRLS" Action="write" Value="2" Type="integer" />
+					<RegistryValue Name="LOADER" Action="write" Value="C:\Program Files\OrderPointACADPluginSoftware\OrderPoints.dll" Type="string" />
+					<RegistryValue Name="MANAGED" Action="write" Value="1" Type="integer" />
+				</RegistryKey>
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>
